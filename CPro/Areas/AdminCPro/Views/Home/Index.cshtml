@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminCPro/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Trang chủ Admin
+}
+<div class="row">
+    
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a href="/AdminCPro/Product" style="color: white;text-decoration: none">Quản lý sản phẩm</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý việc thêm, sửa, xóa các sản phẩm</p>
+            </div>
+           
+        </div>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <a href="/AdminCPro/Category" style="color: white;text-decoration: none">Quản lý danh mục</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý việc thêm, sửa, xóa các danh mục sản phẩm của các mặt hàng</p>
+            </div>
+            
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>  
+    <div class="col-lg-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <a href="/AdminCPro/News" style="color: crimson;text-decoration: none">Quản lý tin tức</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý việc thêm, sửa, xóa các tin tức, các bài viết.Các bài viết được nhiều lượt xem sẽ được up lên danh sách quan tâm</p>
+            </div>
+            
+        </div>
+    </div>
+    <!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <a href="/AdminCPro/User" style="color:brown;text-decoration: none">Quản lý người dùng</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý việc thêm, sửa, xóa người dùng.Sử dụng cơ chế Ajax PostBack để không phải load lại trang</p>
+            </div>
+           
+        </div>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <a href="/AdminCPro/Menu" style="color: brown;text-decoration: none">Quản lý Menu</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý việc thêm, sửa, xóa các menu hiển thị trên các trang</p>
+            </div>
+            
+        </div>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <a href="/AdminCPro/Slide" style="color:brown;text-decoration: none">Quản lý slide</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý việc thêm, sửa, xóa các ảnh trong slide chạy ở trang chủ</p>
+            </div>
+           
+        </div>
+    </div>
+    <!-- /.col-lg-4 -->
+</div>
+
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="/AdminCPro/Footer" style="color:cornflowerblue;text-decoration: none">Quản lý Footer</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý footer của website.Đọc dữ liệu từ cơ sở dữ liệu</p>
+            </div>
+          
+        </div>
+    </div>
+   
+    <div class="col-lg-4">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <a href="/AdminCPro/About" style="color: white;text-decoration: none">Quản lý thông tin</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý thông tin website, thông tin công ty</p>
+            </div>
+            
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <a href="/AdminCPro/Contact" style="color: white;text-decoration: none">Quản lý liên hệ</a>
+            </div>
+            <div class="panel-body">
+                <p>Quản lý thông tin liên hệ của công ty</p>
+            </div>
+           
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+</div>
+<!-- /.row -->

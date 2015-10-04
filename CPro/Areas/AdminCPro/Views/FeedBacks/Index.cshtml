@@ -1,0 +1,109 @@
+﻿@model IPagedList<ModelCPro.EntityFrameWork.FeedBack>
+@using System.Net.Cache
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminCPro/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Danh sách FeedBack
+}
+<p>
+    @using (Html.BeginForm("Index", "FeedBacks", FormMethod.Get))
+    {
+        <b>SearchBy: </b>
+        @Html.RadioButton("searchBy", "Name")<text>Tên</text>
+        @Html.RadioButton("searchBy", "Address")<text>Địa chỉ</text>
+        <br/>
+        <div class="row">
+        <div class="col-md-8">
+            @Html.TextBox("search","", new{@class="form-control"})
+        </div>
+        <div class="col-md-4">
+            <input type="submit" value="Tìm kiếm" class="btn btn-primary"/>
+        </div>
+        </div>
+
+    }
+</p>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+           @Html.ActionLink("Name","Index", new {sortBy = ViewBag.SortName,searchBy = Request["searchBy"], search = Request["search"]})
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Contents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Status)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contents)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.ID}) |
+                @Html.ActionLink("Details", "Details", new {id = item.ID}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.ID})
+            </td>
+        </tr>
+    }
+
+    
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new
+    {
+        page,
+        searchBy = Request.QueryString["searchBy"],
+        search = Request.QueryString["search"],
+        sortBy = Request["sortBy"]
+    })
+    , new PagedListRenderOptions()
+    {
+        Display = PagedListDisplayMode.IfNeeded
+    })
+  

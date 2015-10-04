@@ -1,0 +1,10 @@
+﻿@model List<ModelCPro.EntityFrameWork.Menu>
+<ul class="nav navbar-nav">
+    @foreach (var item in Model)
+    {
+        <li class="dropdown yamm">
+            <a href="@item.Link">@item.Text.ToUpper()</a>          
+        </li>
+    }
+   
+</ul>

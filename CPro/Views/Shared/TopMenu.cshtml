@@ -1,0 +1,7 @@
+﻿@model List<ModelCPro.EntityFrameWork.Menu>
+<ul class="list-unstyled">
+    @foreach (var item in Model)
+    {
+        <li><a href="@item.Link">@item.Text</a></li>
+    }    
+</ul>
